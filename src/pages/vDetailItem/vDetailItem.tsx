@@ -162,6 +162,7 @@ const BodyDetailItem = ({selectedCoffee}: any) => {
     <MidDetail>
       <BannerContainer>
         <VBanner
+          animateOpacity={false}
           source={
             selectedCoffee.image === 'Coffe-1.png'
               ? require('../../../assets/images/Coffe-1.png')

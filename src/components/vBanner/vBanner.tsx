@@ -15,29 +15,37 @@ const Container = styled.View`
 
 interface VBannerProps {
   source: any;
+  animateOpacity?: boolean; // Prop adicional para controlar la animación
 }
 
-export const VBanner: React.FC<VBannerProps> = ({source}) => {
-  // Crear una referencia para el valor animado de la opacidad
+export const VBanner: React.FC<VBannerProps> = ({
+  source,
+  animateOpacity = true,
+}) => {
   const opacityAnim = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
-    // Configurar y empezar la animación de la opacidad
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(opacityAnim, {
-          toValue: 0.7,
-          duration: 1000,
-          useNativeDriver: true, // Usar el driver nativo para mejor performance
-        }),
-        Animated.timing(opacityAnim, {
-          toValue: 1,
-          duration: 1000,
-          useNativeDriver: true,
-        }),
-      ]),
-    ).start();
-  }, [opacityAnim]);
+    if (animateOpacity) {
+      // Si animateOpacity es true, anima entre 0.7 y 1
+      Animated.loop(
+        Animated.sequence([
+          Animated.timing(opacityAnim, {
+            toValue: 0.7,
+            duration: 1000,
+            useNativeDriver: true,
+          }),
+          Animated.timing(opacityAnim, {
+            toValue: 1,
+            duration: 1000,
+            useNativeDriver: true,
+          }),
+        ]),
+      ).start();
+    } else {
+      // Si animateOpacity es false, establece la opacidad en 1 sin animación
+      opacityAnim.setValue(1);
+    }
+  }, [animateOpacity, opacityAnim]);
 
   return (
     <Container>
@@ -50,7 +58,7 @@ export const VBanner: React.FC<VBannerProps> = ({source}) => {
             borderRadius: 20,
             backgroundColor: '#c67c4e',
           },
-          {opacity: opacityAnim}, // Aplicar la opacidad animada al estilo
+          {opacity: opacityAnim}, // Aplica la opacidad animada al estilo
         ]}
       />
     </Container>

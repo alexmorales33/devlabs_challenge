@@ -192,7 +192,10 @@ export function VHome() {
           <WhiteContainer>
             <Overlay />
           </WhiteContainer>
-          <VBanner source={require('../../../assets/images/Banner.png')} />
+          <VBanner
+            animateOpacity={true}
+            source={require('../../../assets/images/Banner.png')}
+          />
         </MidContent>
         <BottomContent>
           <VScrollView horizontal showsHorizontalScrollIndicator={false}>
