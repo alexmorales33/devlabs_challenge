@@ -4,4 +4,5 @@ module.exports = {
   bracketSpacing: false,
   singleQuote: true,
   trailingComma: 'all',
+  endOfLine: 'auto', // Agrega esta línea
 };

@@ -1,0 +1,1 @@
+export {VButtonOutlined} from './vButtonOutlined';

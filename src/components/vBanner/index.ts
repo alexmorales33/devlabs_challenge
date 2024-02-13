@@ -1,0 +1,1 @@
+export {VBanner} from './vBanner';

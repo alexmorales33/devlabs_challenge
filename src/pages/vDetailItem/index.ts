@@ -1,0 +1,1 @@
+export {VDetailItem} from './vDetailItem';
