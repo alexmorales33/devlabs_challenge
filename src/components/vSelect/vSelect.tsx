@@ -36,14 +36,16 @@ export const VSelect: React.FC<VSelectProps> = ({
         value={selectedValue}
         style={{
           inputIOS: {
-            height: 30,
-            color: '#fff', // Color de texto para iOS
+            justifyContent: 'center',
+            marginTop: 0,
+            height: 40,
+            color: '#fff',
           },
           inputAndroid: {
             justifyContent: 'center',
             marginTop: 0,
             height: 40,
-            color: '#fff', // Color de texto para Android
+            color: '#fff',
           },
         }}
       />
