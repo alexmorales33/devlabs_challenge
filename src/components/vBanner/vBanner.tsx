@@ -44,7 +44,12 @@ export const VBanner: React.FC<VBannerProps> = ({source}) => {
       <Animated.Image
         source={source}
         style={[
-          {width: '100%', flex: 1, borderRadius: 20},
+          {
+            width: '100%',
+            flex: 1,
+            borderRadius: 20,
+            backgroundColor: '#c67c4e',
+          },
           {opacity: opacityAnim}, // Aplicar la opacidad animada al estilo
         ]}
       />
